@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(BundleFusion)
+project(bundle_fusion)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -198,3 +198,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(bundle_fusion src/bundle_fusion.cpp)
+target_link_libraries(bundle_fusion ${catkin_LIBRARIES})

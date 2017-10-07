@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>BundleFusion</name>
+  <name>bundle_fusion</name>
   <version>0.0.0</version>
   <description>A ROS BundleFusion package</description>
 

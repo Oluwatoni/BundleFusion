@@ -1,16 +1,16 @@
 #include "ros/ros.h"
-#include "sensor_msgs/"
+#include "sensor_msgs/Image.h"
 
-void chatterCallback(const std_msgs::String::ConstPtr& msg)
+void DepthImageCallback(const sensor_msgs::Image::ConstPtr& msg)
 {
-  ROS_INFO("I heard: [%s]", msg->data.c_str());
+  ROS_INFO("I heard: something");
 }
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "listener");
+  ros::init(argc, argv, "bundle_fusion");
   ros::NodeHandle n;
-  ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
+  ros::Subscriber sub = n.subscribe("/camera/depth/image", 1, DepthImageCallback);
   ros::spin();
   return 0;
 }
